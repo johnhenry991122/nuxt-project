@@ -1,5 +1,5 @@
 <template>
-<div class="page" >
+<div class="page" :class="{'is-collapse': collapse}">
   <mu-appbar color="primary" class="page-header" :z-depth="1">
     <mu-button icon slot="left" @click="toggleMenu">
       <mu-icon value="menu"/>
@@ -10,7 +10,7 @@
   </mu-appbar>
   <mu-drawer open docked :z-depth="0" class="page-side-bar">
     <mu-appbar class="nav-appbar" :z-depth="0" color="transparent">
-      {{ hide ? 'M' : 'Muse Template'}}
+      {{ collapse ? 'M' : 'Muse Template'}}
     </mu-appbar>
     <mu-divider />
     <mu-list>
@@ -38,7 +38,7 @@ export default {
   data () {
     return {
       theme: 'light',
-      hide: false
+      collapse: false
     }
   },
   mounted () {
@@ -50,7 +50,7 @@ export default {
       theme.use(this.theme);
     },
     toggleMenu () {
-      this.hide = !this.hide;
+      this.collapse = !this.collapse;
     }
   }
 };
@@ -74,7 +74,7 @@ export default {
 }
 .page {
   padding-left: 256px;
-  &.is-hide {
+  &.is-collapse {
     padding-left: 56px;
   }
 }
@@ -84,7 +84,7 @@ export default {
   top: 0;
   right: 0;
   transition: all .45s cubic-bezier(0.23, 1, 0.32, 1);
-  .page.is-hide & {
+  .page.is-collapse & {
     left: 56px;
   }
 }
@@ -99,7 +99,7 @@ export default {
 .page-side-bar {
   width: 256px;
   transition: all .45s cubic-bezier(0.23, 1, 0.32, 1);
-  .page.is-hide & {
+  .page.is-collapse & {
     width: 56px;
   }
 }
