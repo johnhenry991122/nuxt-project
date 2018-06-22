@@ -10,7 +10,6 @@
   </mu-appbar>
   <mu-drawer open docked :z-depth="0" class="page-side-bar">
     <mu-appbar class="nav-appbar" :z-depth="0" color="transparent">
-      {{ collapse ? 'M' : 'Muse Template'}}
     </mu-appbar>
     <mu-divider />
     <mu-list>
@@ -37,8 +36,7 @@ import theme from 'muse-ui/lib/theme';
 export default {
   data () {
     return {
-      theme: 'light',
-      collapse: false
+      theme: 'light'
     }
   },
   mounted () {
@@ -48,9 +46,6 @@ export default {
     toggleTheme () {
       this.theme = this.theme === 'light' ? 'dark' : 'light';
       theme.use(this.theme);
-    },
-    toggleMenu () {
-      this.collapse = !this.collapse;
     }
   }
 };
