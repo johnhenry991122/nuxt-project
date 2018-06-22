@@ -9,7 +9,7 @@
     </mu-button>
   </mu-appbar>
   <mu-drawer open docked :z-depth="0" class="page-side-bar">
-    <mu-appbar class="nav-appbar" :z-depth="0" color="transparent" title="collapse ? 'M' : 'Muse Template'">
+    <mu-appbar class="nav-appbar" :z-depth="0" color="transparent" :title="collapse ? 'M' : 'Muse Template'">
     </mu-appbar>
     <mu-divider />
     <mu-list>
