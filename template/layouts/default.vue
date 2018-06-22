@@ -58,49 +58,5 @@ export default {
 
 
 <style lang="less">
-.nav-appbar {
-  .mu-appbar-title {
-    line-height: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    color: rgba(0, 0, 0, .54);
-    > img {
-      width: 36px;
-      height: 36px;
-      margin-right: 8px;
-    }
-  }
-}
-.page {
-  padding-left: 256px;
-  &.is-collapse {
-    padding-left: 56px;
-  }
-}
-.page-header {
-  position: fixed;
-  left: 256px;
-  top: 0;
-  right: 0;
-  transition: all .45s cubic-bezier(0.23, 1, 0.32, 1);
-  .page.is-collapse & {
-    left: 56px;
-  }
-}
-.nuxt-link-exact-active {
-  .mu-item-action {
-    color: #2196f3;
-  }
-  .mu-item {
-    color: #2196f3;
-  }
-}
-.page-side-bar {
-  width: 256px;
-  transition: all .45s cubic-bezier(0.23, 1, 0.32, 1);
-  .page.is-collapse & {
-    width: 56px;
-  }
-}
+
 </style>
