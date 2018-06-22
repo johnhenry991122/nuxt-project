@@ -69,9 +69,6 @@ export default {
 }
 .page {
   padding-left: 256px;
-  &.is-collapse {
-    padding-left: 56px;
-  }
 }
 .page-header {
   position: fixed;
@@ -79,9 +76,6 @@ export default {
   top: 0;
   right: 0;
   transition: all .45s cubic-bezier(0.23, 1, 0.32, 1);
-  .page.is-collapse & {
-    left: 56px;
-  }
 }
 .nuxt-link-exact-active {
   .mu-item-action {
@@ -94,8 +88,5 @@ export default {
 .page-side-bar {
   width: 256px;
   transition: all .45s cubic-bezier(0.23, 1, 0.32, 1);
-  .page.is-collapse & {
-    width: 56px;
-  }
 }
 </style>
