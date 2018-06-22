@@ -1,5 +1,5 @@
 <template>
-<div class="page" :class="{'is-collapse': collapse}">
+<div class="page">
   <mu-appbar color="primary" class="page-header" :z-depth="1">
     <mu-button icon slot="left" @click="toggleMenu">
       <mu-icon value="menu"/>
