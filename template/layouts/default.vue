@@ -1,5 +1,5 @@
 <template>
-<div class="page">
+<div class="page" :class="{'is-collapse': collapse}">
   <mu-appbar color="primary" class="page-header" :z-depth="1">
     <mu-button icon slot="left" @click="toggleMenu">
       <mu-icon value="menu"/>
@@ -10,6 +10,7 @@
   </mu-appbar>
   <mu-drawer open docked :z-depth="0" class="page-side-bar">
     <mu-appbar class="nav-appbar" :z-depth="0" color="transparent">
+      {{ collapse ? 'M' : 'Muse Template'}}
     </mu-appbar>
     <mu-divider />
     <mu-list>
@@ -36,7 +37,8 @@ import theme from 'muse-ui/lib/theme';
 export default {
   data () {
     return {
-      theme: 'light'
+      theme: 'light',
+      collapse: false
     }
   },
   mounted () {
@@ -46,6 +48,9 @@ export default {
     toggleTheme () {
       this.theme = this.theme === 'light' ? 'dark' : 'light';
       theme.use(this.theme);
+    },
+    toggleMenu () {
+      this.collapse = !this.collapse;
     }
   }
 };
@@ -69,6 +74,9 @@ export default {
 }
 .page {
   padding-left: 256px;
+  &.is-collapse {
+    padding-left: 56px;
+  }
 }
 .page-header {
   position: fixed;
@@ -76,6 +84,9 @@ export default {
   top: 0;
   right: 0;
   transition: all .45s cubic-bezier(0.23, 1, 0.32, 1);
+  .page.is-collapse & {
+    left: 56px;
+  }
 }
 .nuxt-link-exact-active {
   .mu-item-action {
@@ -88,5 +99,8 @@ export default {
 .page-side-bar {
   width: 256px;
   transition: all .45s cubic-bezier(0.23, 1, 0.32, 1);
+  .page.is-collapse & {
+    width: 56px;
+  }
 }
 </style>
